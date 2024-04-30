@@ -19,14 +19,21 @@ services:
       postgres_pass: let-me-in
       postgres_db: graph-node
       ipfs: "ipfs:5001"
-      ethereum: "mainnet:http://host.docker.internal:8545"
+      ethereum: "chapel:https://data-seed-prebsc-2-s1.binance.org:8545/"
       GRAPH_LOG: info
+      ETHEREUM_POLLING_INTERVAL: '1000'
+      GRAPH_ETHEREUM_MAX_BLOCK_RANGE_SIZE: '3000'
+      GRAPH_ETHEREUM_BLOCK_INGESTOR_MAX_CONCURRENT_JSON_RPC_CALLS_FOR_TXN_RECEIPTS: '500'
+      GRAPH_ETHEREUM_JSON_RPC_TIMEOUT: '60'
+      GRAPH_ETHEREUM_REQUEST_RETRIES: '5'
+
   ipfs:
     image: ipfs/kubo:v0.17.0
     ports:
       - "5001:5001"
     volumes:
       - ./data/ipfs:/data/ipfs
+
   postgres:
     image: postgres:14
     ports:

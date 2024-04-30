@@ -1,0 +1,31 @@
+
+ùñdataSources:
+  - kind: ethereum
+    mapping:
+      abis:
+        - file:
+            /: /ipfs/QmSjR835HmxhQtXEsSjdaTm9PQSb9FehJjv1xrZDk7D2q9
+          name: SimpleLogger
+      apiVersion: 0.0.7
+      entities:
+        - LogMessage
+      eventHandlers:
+        - event: LogMessage(string)
+          handler: handleLogMessage
+      file:
+        /: /ipfs/QmQJCaGYBTFJ8Q4eD8pTjEoauNPgasfEfBV3PhuC119tv7
+      kind: ethereum/events
+      language: wasm/assemblyscript
+    name: SimpleLogger
+    network: chapel
+    source:
+      abi: SimpleLogger
+      address: '0x62DBdbB53bf4dC8EB1567FD0484b0B3b5B111AA3'
+      startBlock: 39890081
+indexerHints:
+  prune: auto
+schema:
+  file:
+    /: /ipfs/QmdA3nr1xj75JJVhdr1cf1ke1HUinZ31P1W2wRyG9u3KzE
+specVersion: 1.0.0
+ñ
